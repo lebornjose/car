@@ -35,6 +35,7 @@ public class VehiclePathPresetSystem : MonoBehaviour
             }
             else
             {
+                Debug.Log($"Calculating turn path for {preset.radius}");
                 // 转弯路径生成
                 pathPoints = CalculateTurnPath(
                     preset.startPoint.position,
@@ -115,13 +116,14 @@ public class VehiclePathPresetSystem : MonoBehaviour
     {
         if (VehiclePaths == null || VehiclePaths.Count == 0)
             return;
-
+        int index = 0;
         foreach (var preset in VehiclePaths)
         {
             // 区分直行和转弯
             if (preset.movementType == MovementType.Straight)
             {
                 // 直线路径
+                Debug.Log("index:" + index);
                 Gizmos.color = Color.blue;
                 Gizmos.DrawLine(preset.startPoint.position, preset.endPoint.position);
             }
@@ -129,6 +131,7 @@ public class VehiclePathPresetSystem : MonoBehaviour
             {
                 // 生成并绘制圆弧
                 Gizmos.color = Color.green;
+                Debug.Log($"Drawing turn path for {preset.radius}," + index);
                 var curve = CalculateTurnPath(
                     preset.startPoint.position,
                     preset.turnCenter.position,
@@ -141,6 +144,7 @@ public class VehiclePathPresetSystem : MonoBehaviour
                     Gizmos.DrawLine(curve[i], curve[i + 1]);
                 }
             }
+            index++;
         }
     }
 #endif
