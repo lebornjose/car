@@ -35,7 +35,6 @@ public class VehiclePathPresetSystem : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Calculating turn path for {preset.radius}");
                 // 转弯路径生成
                 pathPoints = CalculateTurnPath(
                     preset.startPoint.position,
@@ -131,7 +130,6 @@ public class VehiclePathPresetSystem : MonoBehaviour
             {
                 // 生成并绘制圆弧
                 Gizmos.color = Color.green;
-                Debug.Log($"Drawing turn path for {preset.radius}," + index);
                 var curve = CalculateTurnPath(
                     preset.startPoint.position,
                     preset.turnCenter.position,
