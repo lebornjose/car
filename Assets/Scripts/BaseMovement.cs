@@ -130,9 +130,9 @@ public abstract class BaseMovement : MonoBehaviour
         else
         {
             MyObjectPool.ReleaseGameObject(this.gameObject);
-            GameManager.Instance.UpdateScore(1);
-            UIManager.Instance.UpdateUICount();
-            AudioManager.Instance.PlayCarWin(); 
+            // GameManager.Instance.UpdateScore(1);
+            // UIManager.Instance.UpdateUICount();
+            // AudioManager.Instance.PlayCarWin(); 
             isMoving = false;
         }
     }
