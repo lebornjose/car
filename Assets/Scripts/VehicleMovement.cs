@@ -10,6 +10,7 @@ public class VehicleMovement : BaseMovement
     }
     public void InitializeVehicle(DirectionType directionType, MovementType moveType)
     {
+        Debug.Log($"Vehicle initialized with direction: {directionType}, movement type: {moveType}");
         startDirection = directionType;
         movementType = moveType;
         Initialize();

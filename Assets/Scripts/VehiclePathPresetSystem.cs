@@ -115,13 +115,14 @@ public class VehiclePathPresetSystem : MonoBehaviour
     {
         if (VehiclePaths == null || VehiclePaths.Count == 0)
             return;
-
+        int index = 0;
         foreach (var preset in VehiclePaths)
         {
             // 区分直行和转弯
             if (preset.movementType == MovementType.Straight)
             {
                 // 直线路径
+                Debug.Log("index:" + index);
                 Gizmos.color = Color.blue;
                 Gizmos.DrawLine(preset.startPoint.position, preset.endPoint.position);
             }
@@ -141,6 +142,7 @@ public class VehiclePathPresetSystem : MonoBehaviour
                     Gizmos.DrawLine(curve[i], curve[i + 1]);
                 }
             }
+            index++;
         }
     }
 #endif
