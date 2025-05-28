@@ -122,7 +122,6 @@ public class VehiclePathPresetSystem : MonoBehaviour
             if (preset.movementType == MovementType.Straight)
             {
                 // 直线路径
-                Debug.Log("index:" + index);
                 Gizmos.color = Color.blue;
                 Gizmos.DrawLine(preset.startPoint.position, preset.endPoint.position);
             }

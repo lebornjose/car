@@ -8,6 +8,11 @@ public class VehicleMovement : BaseMovement
     {
         base.Awake();
     }
+    public void Start()
+    {
+        // 初始化车辆时不直接调用Initialize
+        InitializeVehicle(startDirection, movementType);
+    }
     public void InitializeVehicle(DirectionType directionType, MovementType moveType)
     {
         Debug.Log($"Vehicle initialized with direction: {directionType}, movement type: {moveType}");
@@ -20,6 +25,7 @@ public class VehicleMovement : BaseMovement
         currentTargetIndex = 0;
         isMoving = true;
         pathPoints = VehiclePathPresetSystem.GetPath(startDirection, movementType);
+        Debug.Log($"{pathPoints.Count}");
         transform.position = pathPoints[0];
         // 直接设置初始旋转
         Vector3 initialDirection = (pathPoints[1] - pathPoints[0]).normalized;
