@@ -7419,7 +7419,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bb6fd54ef887640b1052f278e6bf07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HumanPaths: []
+  HumanPaths:
+  - startDirection: 0
+    movementType: 0
+    startPoint: {fileID: 569791935}
+    endPoint: {fileID: 1119446234}
+    turnCenter: {fileID: 265198737}
 --- !u!4 &957794828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4700855204314549623, guid: 7b5e1eea516134af4811125beb2c0716, type: 3}
