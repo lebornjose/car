@@ -9,14 +9,20 @@ public class HumanMovement : BaseMovement
         base.Awake();
         Anima = GetComponent<Animator>();
     }
+    
+    public void Start()
+    {
+        // 初始化车辆时不直接调用Initialize
+       InitializeHuman(startDirection, MovementType.Straight);
+    }
     public override void ChangeMoveState()
     {
         isMoving = !isMoving;
-        if(isMoving)
+        if (isMoving)
             Anima.SetBool("stand", false);
         else
             Anima.SetBool("stand", true);
-        if(isMoving==false)
+        if (isMoving == false)
             StartEnduranceTimer();
         else
             ResetEnduranceUI();

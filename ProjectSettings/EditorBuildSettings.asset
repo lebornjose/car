@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Loading Games/Toon City Pack/Demo/Scenes/Demo.unity
+    guid: 54d57a49b87a3f7468e686600a20aa5f
   m_configObjects: {}
